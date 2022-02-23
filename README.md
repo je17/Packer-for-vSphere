@@ -4,12 +4,13 @@
 
 ## Usage  
   
-### RockyLinux  
+### Rocky Linux  
   
-1. Fill up the variable values in ***rockylinux85.pkrvars.hcl***  
-2. Create both directories: ***http*** and ***logs***  
-3.  In ***http*** directories, upload your ***anaconda-ks.cfg*** and rename it as ***ks.cfg***  
-4.  Execute the Packer build:  
+1. Upload ***Rocky Linux iso*** and note down the hash of the iso
+2. Fill up the variable values in ***rockylinux85.pkrvars.hcl***  
+3. Create both directories: ***http*** and ***logs***  
+4.  In ***http*** directories, upload your ***anaconda-ks.cfg*** and rename it as ***ks.cfg***  
+5.  Execute the Packer build:  
      `./packer-build.bash`  
 Alternately, you can manually run the packer command:  
     `packer init -var-file=rockylinux.pkrvars.hcl .`  
@@ -19,11 +20,12 @@ Alternately, you can manually run the packer command:
   
 ### Ubuntu  
   
-1. Fill up the variable values in ***ubuntu2004.pkrvars.hcl***  
-2. Create both directories: ***http*** and ***logs***  
-3. In ***http*** directories, create an empty file called ***meta-data***  
-4.  In ***http*** directories, upload your ***autoinstall-user-data*** and rename it as ***user-data***  
-5.  Execute the Packer build:  
+1. Upload ***Ubuntu iso*** and note down the hash of the iso
+2. Fill up the variable values in ***ubuntu2004.pkrvars.hcl***  
+3. Create both directories: ***http*** and ***logs***  
+4. In ***http*** directories, create an empty file called ***meta-data***  
+5.  In ***http*** directories, upload your ***autoinstall-user-data*** and rename it as ***user-data***  
+6.  Execute the Packer build:  
      `./packer-build.bash`  
 Alternately, you can manually run the packer command:  
     `packer init -var-file=ubuntu.pkrvars.hcl .`  
@@ -32,7 +34,7 @@ Alternately, you can manually run the packer command:
     `packer build -var-file=ubuntu.pkrvars.hcl .`  
   
 ## Variables  
-Example of variable values in ***ubuntu.pkrvars.hcl***:
+Example of variable values in ***ubuntu2004.pkrvars.hcl***:
 | Name  | Description  | Example value  |
 | ------------- | ------------- | ------------- |
 | vcenter_url  | URL of vCenter Server  | "https://vcenter.example.com"  |
